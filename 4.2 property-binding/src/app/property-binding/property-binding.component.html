@@ -1,0 +1,29 @@
+<h2>PropertyBinding</h2>
+
+<!-- //Привязка свойств выполняется: [свойство]="значение"
+//Интерполяцию и привязку свойств можно исспользовать только в том случае когда целевое свойство являеется свойством DOM
+обьекта. В примере ниже мы уствновили значение свойсв src и tittle для DOM элементов -->
+<img [src]="imageScr" [alt]="imageAlt" [title]="imageTitle">
+
+<br>
+
+<!-- //В этом примере устанавливается значение для атрибутов scr and title, браузер в дальнейшем установит соответствующие свойства обьект DOM дерева -->
+<img src="{{imageScr}}" alt="{{imageAlt}}" title="{{imageTitle}}">
+
+<!-- // Ошибка из-за несуществующих атрибутов, так нельзя :D -->
+<!-- <img src="{{imageScr}}" someThing="{{imageAlt}}" SomethingElse="{{imageTitle}}"> -->
+
+<br>
+
+<label>
+  <input checked="{{isChecked}}" type="checkbox">
+  <strong>{{isChecked}}</strong>, element incorect checked
+</label>
+
+<label>
+  <input type="checkbox" id="successful" [checked]="isChecked">
+  <strong>{{isChecked}}</strong>, element checked correct
+</label>
+
+<br>
+

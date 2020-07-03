@@ -1,0 +1,12 @@
+<h3>
+  {{header}}
+
+  <span (click)="showHide()" class="spoiler-trigger">
+    <span *ngIf="!isVisible">[показать]</span>
+    <span *ngIf="isVisible">[скрыть]</span>
+  </span>
+</h3>
+
+<p *ngIf="isVisible" class="spoiler-body">
+  <ng-content></ng-content>
+</p>

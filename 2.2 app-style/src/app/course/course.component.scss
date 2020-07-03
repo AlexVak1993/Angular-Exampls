@@ -1,0 +1,19 @@
+h1 {
+  color: #555555;
+}
+h2 {
+  color: #777777;
+}
+p {
+  color: #595959;
+}
+
+//app-course
+:host {
+  display: block;
+  border-bottom: 2px solid red;
+  margin-bottom: 100px;
+}
+:host /deep/ span {
+  border-bottom: 2px solid yellow;
+}

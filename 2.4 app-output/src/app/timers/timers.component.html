@@ -1,0 +1,21 @@
+
+<h3>Timer 1</h3>
+<app-timer-item (tick)="logging(0, $event)"></app-timer-item>
+<p>Timer 1 output in parrent component event:
+  <b>{{tickLog[0]}}</b>
+</p>
+
+
+<h3>Timer 2</h3>
+<app-timer-item (tick)="logging(1, $event)" [timerInterval]="2"></app-timer-item>
+<p>Timer 2 output in parrent component event:
+  <b>{{tickLog[1]}}</b>
+</p>
+
+
+<h3>Timer 3</h3>
+<app-timer-item (tick)="logging(2, $event)" [timerInterval]="5000"></app-timer-item>
+<p>Timer 3 output in parrent component event:
+  <b>{{tickLog[2]}}</b>
+</p>
+

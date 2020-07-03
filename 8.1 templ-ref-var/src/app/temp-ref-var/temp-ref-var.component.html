@@ -1,0 +1,20 @@
+<h2>Template Reference Variable</h2>
+
+<h3>Пример использования</h3>
+
+<!-- Template Reference Variable - ссылка на DOM элемент или директиву в шаблоне. К переменной можно обратиться в любой части
+шаблона, в котором она обьявлена. Способ обьявления переменной - префикс #, например #varname -->
+
+<label>X:
+<input #xInput type="number" placeholder="Значение X"
+       (click)="sum(xInput.value, yInput.value)">
+</label>
+
+<label>Y:
+<input #yInput type="number" placeholder="Значение Y"
+       (click)="sum(xInput.value, yInput.value)">
+</label>
+
+<button (click)="sum(xInput.value, yInput.value)">Посчитать</button>
+
+<b>Результат: {{result}}</b>

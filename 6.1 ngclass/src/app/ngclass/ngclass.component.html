@@ -1,0 +1,49 @@
+<h2>Привязка классов</h2>
+
+<!-- Импорт FormsModule для [(ngModel)] -->
+<h3>Варианты использования директивы ngClass</h3>
+
+<!-- Привязка классов - строковое значение -->
+<div [ngClass]="'border border-danger bg-success text-warning rounded p-3 mt-5'">
+  Набор классов в виде строки<br>
+  <h5>[ngClass]="'border border-danger bg-success text-warning rounded p-3 mt-5'"</h5>
+</div>
+
+<!-- Использование массива -->
+<div [ngClass]="['border', 'border-info', 'bg-warning', 'text-light', 'rounded', 'p-3', 'mt-5']">
+  Набор классов в виде массива <br>
+  <h5>"['border', 'border-info', 'bg-success', 'text-warning', 'rounded', 'p-3', 'mt-5']"</h5>
+</div>
+
+<!-- Использование обьекта. Каждый ключ обьекта -имя класс CSS -->
+<div
+  [ngClass]="{'border': true, 'border-success': true, 'bg-info': true, 'text-light': true, 'rounded':true, 'p-3': true, 'mt-5': true}">
+  Набор классов в виде обьекта <br>
+  <h5>[ngClass]='border': true, 'border-success': true, 'bg-info': true, 'text-light': true, 'rounded':true, 'p-3':
+    true, 'mt-5': true</h5>
+</div>
+
+<!-- Ключ обьекта = строка классов. Значение true - класс добавляется к элементу, иначе - убирается -->
+<div [ngClass]="{'border border-warning bg-danger text-warning rounded p-3 mt-4' : true}">
+  Набор классов в виде строк обьекта <br>
+  <h5>[ngClass]="&#123;'border border-warning bg-danger text-warning rounded p-3 mt-4' : true&#125;"</h5>
+</div>
+
+<!-- Исспользование свойства компонента в качестве настроечного обьекта -->
+<div [ngClass]="setting">
+  Набор классов в виде передаваемого настроечного обьекта <br>
+  <h5>[ngClass]="setting"</h5>
+</div>
+
+<!-- Набор классов по условию -->
+<div>
+  <label [ngClass]="setting">
+    <input type="checkbox" [(ngModel)]="isChecked">
+    Вкл / Выкл - меняет набор классов
+  </label>
+</div>
+
+<div [ngClass]="isChecked ? checkedClasses : uncheckedClasses">
+  Наборы классов по условию <br>
+  <h5>[ngClass]="isChecked ? checkedClasses : uncheckedClasses"</h5>
+</div>

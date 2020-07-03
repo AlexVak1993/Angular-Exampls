@@ -1,0 +1,7 @@
+<h3>NgOnChanges</h3>
+
+<!-- метод increment родительского компонента увеличивает свойства counterб которое в свой черед привязывает в свойво
+дочернего компонента изменение свойств value в app-sample-item запустит событие ngOnChanges -->
+<app-sample-item [value]="counter"></app-sample-item>
+
+<button (click)="increment()">Инкремент</button>

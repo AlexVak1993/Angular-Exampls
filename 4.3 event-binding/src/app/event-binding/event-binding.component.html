@@ -1,0 +1,10 @@
+<h3>EventBinding</h3>
+
+<!-- Событие привязывается к методу (функции) -->
+<button (click)="onClick()">{{onClickMessage}}</button>
+
+<button (mouseenter)="onMouseEnter()"
+        (mouseleave)="onMouseLeave()">{{onMouseMessage}}</button>
+
+<!-- viev result in console - передается обьект event-->
+<button (click)="testEvent($event)">Передача обьекта $event</button>

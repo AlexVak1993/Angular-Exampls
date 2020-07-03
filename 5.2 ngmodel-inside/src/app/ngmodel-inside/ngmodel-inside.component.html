@@ -1,0 +1,12 @@
+<h2>ngModel-inside - Двусторонняя привязка даных</h2>
+
+<h3>Директива ngModel, что 'под капотом'</h3>
+
+<!-- Следующий код работает так же, как и директива ngModel. -->
+
+<label>
+  <input id="first" type="text" placeholder="Начните вводить текст"
+         [value]="currentValue"
+         (input)="currentValue = $event.target.value">
+  {{currentValue}}
+</label>

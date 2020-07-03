@@ -1,0 +1,26 @@
+h1 {
+  color: red;
+}
+h2  { 
+  color: red;
+}
+h3 {
+  color: darkblue;
+}
+h4 {
+  color: cadetblue;
+}
+
+//app-topic
+:host {
+  display: block;
+  padding: 15px 5px;
+  margin: 15px 0;
+}
+
+:host-context(.bg-dark) p {
+  color: red;
+}
+:host-context(.bg-light) p {
+  color: orange;
+}

@@ -1,0 +1,28 @@
+<h2>Структурная директива ngFor</h2>
+
+<h3>Простой пример использования директивы</h3>
+
+<ul>
+  <!-- let item of items - получить каждый элемент из массива items, сохранитьв локальной переменной item и с сделать
+  доступной в HTML элемент на каждой итерации. Параметр передаваемый в ngFor - micrisyntax, а не выражение -->
+  <li *ngFor="let item of items">
+    {{item}}
+  </li>
+</ul>
+
+<h3>ngFor и локальный переменный</h3>
+
+<ul>
+  <!-- Возможные варианты использования локальных переменных: index, even, odd, first, last -->
+  <li *ngFor="let item of items;
+              let i = index;
+              let e = even;
+              let o = odd;
+              let f = first;
+              let l = last"
+      [style.color]="e ? 'red' : 'green'"
+      [style.font-weight]="o ? 'bold' : 'normal'"
+      [style.background]="f || l ? 'orange' : ''">
+  Индекс: {{i}} --- {{item}}
+  </li>
+</ul>

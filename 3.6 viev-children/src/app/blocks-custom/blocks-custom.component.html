@@ -1,0 +1,9 @@
+<h3>vievChildren, vievChild</h3>
+
+<button (click)="showAllBlock()">Show / Hide all blocks</button>
+
+<app-block-item>Component block 1</app-block-item>
+<app-block-item #selected>Component block 2 (hide him)</app-block-item>
+<app-block-item>Component block 3</app-block-item>
+
+<button (click)="showSelectedBlock()">Show / Hide block #2</button>
