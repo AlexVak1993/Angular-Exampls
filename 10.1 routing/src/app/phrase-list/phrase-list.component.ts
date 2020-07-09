@@ -19,13 +19,17 @@ export class PhraseListComponent implements OnInit {
   constructor(private router: Router, private svc: PhraseService) { }
 
   ngOnInit(): void {
-    this.svc
+    this.svc // обращаемся к сервису
       .getAll()
       .then(result => this.phrases = result)
     // Как только Promise перейдет в состояние resolved результат его работы присвоится свойству phrases
   }
 
   onSelect(selected: Phrase) {
+    console.log(selected);
+    
+    // При клике по элементу сиска перенаправляем пользователя по адрусу /phrase/id
+    // Адрес с обязательым параметром указан в настройках маршрутизации
     this.router.navigate(['phrase', selected.id]);
   }
 

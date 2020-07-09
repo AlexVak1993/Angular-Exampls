@@ -1,0 +1,5 @@
+<input #inputbox type="text" placeholder="Введите текст"
+      (keyup.enter)="onKeyUp(inputbox.value)"
+      (blur)="onKeyUp(inputbox.value)">
+
+  <p>{{message}}</p>

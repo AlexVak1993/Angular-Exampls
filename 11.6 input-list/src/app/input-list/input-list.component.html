@@ -1,0 +1,13 @@
+<h3>List</h3>
+
+<label>Enter new value:
+  <input #inputbox type="text" (keyup.enter)="add(inputbox.value)">
+</label>
+
+<button (click)="add(inputbox.value)">Add</button>
+
+<ul>
+  <li *ngFor="let item of list">
+    {{item}}
+  </li>
+</ul>

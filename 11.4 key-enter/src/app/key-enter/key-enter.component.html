@@ -1,0 +1,4 @@
+<!-- Привязка обработчика на нажаните клавиши enter -->
+<input #inputbox (keyup.enter)="onKeyUp(inputbox.value)" placeholder="Input some text here">
+
+<p>{{message}}</p>

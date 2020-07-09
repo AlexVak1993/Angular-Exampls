@@ -15,11 +15,23 @@ export class PhraseDetailComponent implements OnInit {
   phrase: Phrase;
 
   // ActivatedRoute - содержит информацию о маршруте связанную с компонентом, который загружается в outlet
-  constructor(private router: Router, private avtivatedRoute: ActivatedRoute, private svc: PhraseService) {
+  constructor(private router: Router, private aсtivatedRoute: ActivatedRoute, private svc: PhraseService) {
   }
 
   ngOnInit(): void {
-    this.avtivatedRoute.params.forEach((params: Params) => {
+    // Используем Observable обьект
+    // Observable - это обьект, который может выдавать событие в определенный момент времени
+    // Observable - чем-то похож на Промис и нужен для организации ассинхронного кода
+    // Promise переходин из пендинга в ресолв/реджект единоразово
+    // Observable в отличии от промиса может выполнять переход многократно
+
+    // params - параметры текущего маршрута, если параметры будут изменены - произйдет событие и компонент узнает об изменениях
+    // forEach - устанавливает обработчик на каждое изменение params
+    // forEach будет заменен на subscribe далее
+
+    this.aсtivatedRoute.params.forEach((params: Params) => {
+      console.log(params);
+      
       const id = +params.id;
       this.svc
         .getPhrase(id)
