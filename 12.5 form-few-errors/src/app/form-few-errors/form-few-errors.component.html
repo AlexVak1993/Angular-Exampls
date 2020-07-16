@@ -1,0 +1,49 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col">
+
+      <h3>User Registration</h3>
+
+      <form>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input class="form-control" type="text" id="name" name="name" required minlength="4" maxlength="10"
+            #name="ngModel" [(ngModel)]="model.name" (input)="errorsLog(name.errors)">
+          <!-- Условие отображения отображения -->
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+            <div *ngIf="name.errors.required">
+              Name is required
+            </div>
+            <div *ngIf="name.errors.minlength">
+              Name must be at leach 4 charactor long
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="age">Age:</label>
+          <input class="form-control" type="number" id="age" name="age" required #age="ngModel" [(ngModel)]="model.age">
+          <div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert alert-danger">
+            <div *ngIf="age.errors.required">
+              Age is required
+            </div>
+          </div>
+        </div>
+
+          <div class="form-group">
+            <label for="role">Role:</label>
+            <select class="form-control" id="role" name="role" required [(ngModel)]="model.role">
+              <option *ngFor="let role of roles" [value]="role">{{role}}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-info">Submit</button>
+          </div>
+
+          <p>{{diagnostic}}</p>
+      </form>
+
+    </div>
+  </div>
+</div>

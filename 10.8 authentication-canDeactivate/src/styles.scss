@@ -7,6 +7,26 @@ body {
 
 button {
   padding: 7px 15px;
+
+  &.btn-style {
+    border: 1px solid darkred;
+    color: #e03237;
+    background-color: white;
+    border-radius: 7px;
+    margin-top: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+    font-weight: 600;
+
+    &:hover {
+      background-color: #e03237;
+      color: white;
+      text-decoration: none;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
 nav {

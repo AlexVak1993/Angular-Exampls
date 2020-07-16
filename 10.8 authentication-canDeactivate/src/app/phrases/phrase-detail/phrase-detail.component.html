@@ -4,17 +4,17 @@
   <div *ngIf="authService.isLoggedIn; then thenBlock else elseBlock"></div>
 
   <div *ngIf="isChanged()">
-    <button (click)="save()">Сохранить</button>
+    <button (click)="save()" class="btn-style">Сохранить</button>
   </div>
+  
+</div>
 
   <ng-template #thenBlock>
-    <div><label>Value: <input type="text" [(ngModel)]="editValue"></label></div>
-    <div><label>Language: <input type="text" [(ngModel)]="editLanguage"></label></div>
+    <div class="phrase-change"><label class="phrase-change__label">Value: <input class="phrase-change__input" type="text" [(ngModel)]="editValue"></label></div>
+    <div class="phrase-change"><label class="phrase-change__label">Language: <input class="phrase-change__input" type="text" [(ngModel)]="editLanguage"></label></div>
   </ng-template>
 
   <ng-template #elseBlock>
-    <div>Value: {{editValue}}</div>  
-    <div>Language: {{editLanguage}}</div>  
+    <div class="phrase-change">Value: {{editValue}}</div>  
+    <div class="phrase-change">Language: {{editLanguage}}</div>  
   </ng-template>
-
-</div>

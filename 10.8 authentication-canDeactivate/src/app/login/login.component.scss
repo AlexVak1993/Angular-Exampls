@@ -1,0 +1,17 @@
+.auth {
+  width: 250px;
+  display: block;
+  overflow: auto;
+
+  &:first-child {
+    padding-bottom: 2px;
+  }
+
+  &__label {
+    clear: both;
+  }
+
+  &__input {
+    float: right;
+  }
+}
