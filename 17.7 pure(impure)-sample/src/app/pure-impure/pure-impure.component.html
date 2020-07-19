@@ -1,0 +1,17 @@
+<h3>Pure Pipe</h3>
+
+<p>Original data: {{person1.firstName}} {{person1.lastName}}</p>
+<!--Следим за изменение ссылки, а не отдельных значений.-->
+<p>Filter: {{person1 | purePipe}}</p>
+
+<button (click)="changePropPerson1()">Change property for person1</button>
+<button (click)="changeRefPerson1()">Change reference person1</button>
+
+<h3>Impure Pipe</h3>
+
+<p>Original data: {{person2.firstName}} {{person2.lastName}}</p>
+<!--Следим за любыми изменениями.-->
+<p>Filter: {{person2 | impurePipe}}</p>
+
+<button (click)="changePropPerson2()">Change property for person1</button>
+<button (click)="changeRefPerson2()">Change reference person1</button>

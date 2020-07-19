@@ -1,0 +1,16 @@
+<div>
+  <label for="value">Value in meters:</label>
+  <input type="text" id="value" [(ngModel)]="value">
+</div>
+
+<div>
+  <label for="metric">Metric system</label>
+  <input type="radio" id="metric" #metric name="measure" checked
+         (click)="onClick(metric.checked, imperial.checked)"> <!--debug, if needed.-->
+
+  <label for="imperial">Imperial system</label>
+  <input type="radio" id="imperial" #imperial name="measure"
+         (click)="onClick(metric.checked, imperial.checked)"> <!--debug, if needed.-->
+</div>
+
+<p>{{value | myFormat : metric.checked}}</p>

@@ -1,0 +1,37 @@
+<h3>Pure data</h3>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Category</th>
+    <th>Date</th>
+  </tr>
+
+  <tr *ngFor="let product of products">
+    <td>{{product.id}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.category}}</td>
+    <td>{{product.date}}</td>
+  </tr>
+</table>
+
+<h3>Filtered data</h3>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Category</th>
+    <th>Date</th>
+  </tr>
+
+  <tr *ngFor="let product of products">
+    <td>{{product.id | lowercase}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price | currency : "USD" : "symbol" }}</td> <!--"symbol" "code"-->
+    <td>{{product.category | uppercase}}</td>
+    <td>{{product.date | date}}</td>
+  </tr>
+</table>
